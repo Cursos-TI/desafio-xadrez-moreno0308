@@ -7,7 +7,8 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int Torre = 1, Bispo = 1, Rainha = 1;
+    int Torre = 1, Bispo = 1, Rainha = 1, cavalo =1;
+    char direcao_cavalo;
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
     //descrição indicando qual pessa ira se movimentar 
@@ -23,6 +24,7 @@ int main() {
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
    // Pular linha
+
     printf("\n");
     //descrição indicando qual pessa ira se movimenta
     printf("Abaixo Movimentação da torre\n");
@@ -47,6 +49,41 @@ int main() {
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
+    //Pular linha
+    printf("\n");
+    //Solicitação de entrada de dados para direção da peça Cavalo
+    printf("Digite para qual direção o cavalor irá:\n");
+    printf("E - Para Esqueda.\n");
+    printf("D - Para Direita.\n");
+    scanf("%c", &direcao_cavalo);
+    printf("\n");
+     //descrição indicando qual pessa ira se movimenta
+    printf("Abaixo Movimentação do Cavalo\n");
+    while (cavalo --)
+    {
+        
+        for (int i = 0; i < 2; i++)
+        {
+            printf("O cavalo Moveu Uma Casa para cima \n");
+        }
+        switch (direcao_cavalo)
+        {
+        case 'e':
+        case 'E':
+            printf("O cavalo Moveu Uma Casa para Esquerda. \n");
+            break;
+        case 'd':
+        case 'D':
+            printf("O cavalo Moveu Uma Casa para Direita. \n");
+            break;
+        
+        default:
+            printf("Codigo a ser executado se nenhum dos casos acima for verdadeiro\n");
+            break;
+        }
+        
+    }
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
