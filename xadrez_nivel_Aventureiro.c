@@ -59,28 +59,35 @@ int main() {
     printf("\n");
      //descrição indicando qual pessa ira se movimenta
     printf("Abaixo Movimentação do Cavalo\n");
+    // abaixo Loop aninhado
     while (cavalo --)
     {
-        
+        //segundo loop aninhado
         for (int i = 0; i < 2; i++)
         {
             printf("O cavalo Moveu Uma Casa para cima \n");
         }
+        // teste logico para direção do cavalo
         switch (direcao_cavalo)
         {
+            // primeira case impressão para esquerda
         case 'e':
         case 'E':
             printf("O cavalo Moveu Uma Casa para Esquerda. \n");
             break;
+            // segunda case impressão para direita
         case 'd':
         case 'D':
             printf("O cavalo Moveu Uma Casa para Direita. \n");
             break;
         
         default:
+        //mensagem caso o usuario digite alguma direção não dastrada
             printf("Codigo a ser executado se nenhum dos casos acima for verdadeiro\n");
             break;
         }
+
+        return 0;
         
     }
     
