@@ -86,8 +86,6 @@ int main() {
             printf("Codigo a ser executado se nenhum dos casos acima for verdadeiro\n");
             break;
         }
-
-d
         
     }
     
