@@ -54,7 +54,6 @@ int main() {
     int casas_bispo = 5;
     int casas_rainha = 8;
     int cavalo_movimentos = 1;
-    char direcao_cavalo;
     
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
@@ -96,12 +95,7 @@ int main() {
     // Um loop pode representar a movimentação horizontal e outro vertical.
     //Pular linha
     printf("\n");
-    //Solicitação de entrada de dados para direção da peça Cavalo
-    printf("Digite para qual direção o cavalor irá:\n");
-    printf("E - Para Esqueda.\n");
-    printf("D - Para Direita.\n");
-    scanf("%c", &direcao_cavalo);
-    printf("\n");
+
      //descrição indicando qual pessa ira se movimenta
     printf("Abaixo Movimentação do Cavalo\n");
     // Loop principal para o número total de movimentos do Cavalo.
