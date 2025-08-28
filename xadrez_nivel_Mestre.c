@@ -55,18 +55,17 @@ int main() {
     int casas_rainha = 8;
     int cavalo_movimentos = 1;
     char direcao_cavalo;
+    
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
     //descrição indicando qual pessa ira se movimentar 
     printf("Abaixo Movimentação do Bispo\n");
      // teste logico para movimanteção das peças e loop 
-    while (Bispo <= 5) {
-        //descrição de como a peça se movimentou
-        printf("O Bispo Moveu Uma Casa para cima \n");
-        printf("O Bispo Moveu Uma Casa para à direita \n");
-        Bispo ++;
-} 
-    
+    // --- Movimentação do Bispo (Recursividade e Loops Aninhados) ---
+    printf("--- Movimentação do Bispo (Recursividade e Loops Aninhados) ---\n");
+    moverBispo(casas_bispo);
+    printf("\n");
+
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
    // Pular linha
@@ -75,11 +74,11 @@ int main() {
     //descrição indicando qual pessa ira se movimenta
     printf("Abaixo Movimentação da torre\n");
     // teste logico para movimanteção das peças e loop 
-   for(Torre = 1; Torre <= 5; Torre ++)
-    {
-    //descrição de como a peça se movimentou
-    printf("A Torre Moveu Uma Casa para à direita \n");
-   }
+    // --- Movimentação da Torre (Recursividade) ---
+    printf("--- Movimentação da Torre (Recursividade) ---\n");
+    moverTorre(casas_torre);
+    printf("\n");
+
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
     //Pular linha
@@ -87,11 +86,11 @@ int main() {
      //descrição indicando qual pessa ira se movimenta
     printf("Abaixo Movimentação da Rainha\n");
     // teste logico para movimanteção das peças e loop 
+    // --- Movimentação da Rainha (Recursividade) ---
+    printf("--- Movimentação da Rainha (Recursividade) ---\n");
+    moverRainha(casas_rainha);
+    printf("\n");
 
-    do{ //descrição de como a peça se movimentou
-        printf("A Rainha Moveu Uma Casa para à Esquerda \n"); 
-                Rainha++; } while (Rainha <=8);
-                
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
     // Um loop pode representar a movimentação horizontal e outro vertical.
@@ -105,36 +104,29 @@ int main() {
     printf("\n");
      //descrição indicando qual pessa ira se movimenta
     printf("Abaixo Movimentação do Cavalo\n");
-    // abaixo Loop aninhado
-    while (cavalo --)
-    {
-        //segundo loop aninhado
-        for (int i = 0; i < 2; i++)
-        {
-            printf("O cavalo Moveu Uma Casa para cima \n");
-        }
-        // teste logico para direção do cavalo
-        switch (direcao_cavalo)
-        {
-            // primeira case impressão para esquerda
-        case 'e':
-        case 'E':
-            printf("O cavalo Moveu Uma Casa para Esquerda. \n");
-            break;
-            // segunda case impressão para direita
-        case 'd':
-        case 'D':
-            printf("O cavalo Moveu Uma Casa para Direita. \n");
-            break;
-        
-        default:
-        //mensagem caso o usuario digite alguma direção não dastrada
-            printf("Codigo a ser executado se nenhum dos casos acima for verdadeiro\n");
-            break;
+    // Loop principal para o número total de movimentos do Cavalo.
+    for (int i = 0; i < cavalo_movimentos; i++) {
+        // Loop aninhado para as duas casas verticais (para cima).
+        for (int vertical = 0; vertical < 2; vertical++) {
+            printf("O cavalo Moveu Uma Casa para cima\n");
+            
+            // Condição para usar 'continue' e 'break'.
+            // Exemplo: se for o primeiro movimento vertical (vertical == 0),
+            // ele avança para o próximo, simulando o L.
+            if (vertical == 0) {
+                continue; // Continua para a próxima iteração do loop vertical.
+            }
         }
         
+        // Movimento horizontal de uma casa (para a direita).
+        printf("O cavalo Moveu Uma Casa para a direita\n");
+
+        // Condição de 'break' para sair do loop, se necessário.
+        if (i == 0) {
+            break; // Sai do loop principal após o primeiro movimento "L".
+        }
     }
-    
+    printf("\n");
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
